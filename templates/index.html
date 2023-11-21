@@ -11,18 +11,18 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@400;500;600;700&display=swap">
 
-    <link rel="stylesheet" href="css/bg.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/main-unicorn.css">
-    <link rel="stylesheet" href="css/main-book.css">
-    <link rel="stylesheet" href="css/main-vision.css">
-    <link rel="stylesheet" href="css/main-service.css">
-    <link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/bg.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/nav.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/main-unicorn.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/main-book.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/main-vision.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/main-service.css")}}">
+	<link rel="stylesheet" href="{{url_for("static", filename="css/footer.css")}}">
 </head>
 
 <body>
     <nav>
-        <img src="public/logo1@2x.png" alt="">
+		<img src="{{url_for("static", filename="public/logo1@2x.png")}}" alt="">
         <div id="navbar">
             <a href="" class="nav-item" tabindex="2">
                 <li>Service</li>
@@ -55,7 +55,7 @@
             Contact us
         </a>
     </div>
-    <script src="./js/nav.js"></script>
+	<script src="{{url_for("static", filename="./js/nav.js")}}"></script>
     <!-- the above code is only for navabr -->
 
     <main>
@@ -97,7 +97,7 @@
                     distinctio harum? Unde libero vitae eligendi et nulla distinctio nesciunt corrupti in facilis, dolor
                     esse?
                 </div>
-                <img src="./public/arrow-svg.svg" alt="">
+				<img src="{{url_for("static", filename="./public/arrow-svg.svg")}}" alt="">
             </div>
         </section>
 
@@ -117,14 +117,14 @@
                     distinctio harum? Unde libero vitae eligendi et nulla distinctio nesciunt corrupti in facilis, dolor
                     esse?
                 </div>
-                <img src="./public/arrow-svg.svg" alt="">
+				<img src="{{url_for("static", filename="./public/arrow-svg.svg")}}" alt="">
             </div>
         </section>
     </main>
 
     <footer>
         <div id="foot-center">
-            <img src="./public/logo1@2x.png" alt="">
+			<img src="{{url_for("static", filename="./public/logo1@2x.png")}}" alt="">
             <h1>Turning &nbsp;vision &nbsp;into &nbsp;reality</h1>
         </div>
         <div id="footer-bottom">
