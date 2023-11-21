@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;700&display=swap"
+  />
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: "Plus Jakarta Sans";
+        }
+
+        .text-content{
+            padding-top: 8%;
+        }
+
+        .main{
+                        padding-left: 5%;
+                        padding-right: 5%;
+
+        }
+        .heading{
+            font-size: 5em;
+            margin-bottom: 20px;
+
+        }
+        .para-content{
+            width: 35%;
+        }
+
+
+
+        .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+
+    .image {
+      width: 22%; 
+      aspect-ratio: 1 / 1;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      .image {
+        width: 46%; 
+      }
+
+      .para-content{
+            width: 100%;
+        }
+
+    }
+    nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 6px 10vw;
+    justify-content: space-between;
+    gap: 80px;
+    z-index: 99;
+}
+
+nav>img {
+    width: 200px;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+
+}
+
+@media screen and (min-width:1024px) {
+    #navbar {
+        display: flex;
+    }
+
+    #menu-phone{
+        display:none
+    }
+
+
+
+
+}
+
+#navbar li {
+    list-style: none;
+}
+
+#navbar a {
+    width: 140px;
+    height: 60px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: Plus Jakarta Sans;
+
+    border-bottom: 3px solid #000;
+
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.nav-item {
+    border: 2px dashed #000;
+    
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    border: 2px dashed #fff;
+    border-bottom: 3px solid #fff;
+}
+
+#contact-us-nav {
+    width: 170px;
+    border-radius: 9999px;
+    border: 2px solid #fff;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    border-bottom: #fff !important;
+}
+
+#contact-us-nav:hover,
+#contact-us-nav:focus {
+    border: 2px solid #fff;
+    border-bottom:3px solid #fff;
+    background: #000;
+    color: #fff;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.line {
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke: #fff;
+    transition: all 500ms;
+}
+
+.top {
+    transform-origin: 26px 40px;
+}
+
+.middle {
+    stroke-dasharray: 60 60;
+}
+
+.bottom {
+    transform-origin: 26px 60px;
+}
+
+.menu .line {
+    stroke: #fff;
+}
+
+.menu .top1 {
+    transform: rotate(45deg);
+}
+
+.menu .middle1 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+}
+
+.menu .bottom1 {
+    transform: rotate(-45deg);
+}
+
+.menu {
+    display: none
+}
+
+
+@media screen and (max-width:1023px) {
+    .menu {
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: fit-content;
+        border: 2px solid #fff;
+        width: 50px;
+        border-radius: 9999px;
+    }
+
+    .menu>svg {
+        height: 40px
+    }
+
+    nav > img{
+        width:10em;
+    }
+
+    nav {
+        justify-content: space-between;
+        gap: 20%;
+    }
+
+
+}
+
+#menu-phone {
+    /* width:100%; */
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    text-align: left;
+    /* padding: 0px 8px; */
+    border-radius: 20px;
+    /* display: flex; */
+    color: #fff;
+    flex-direction: column;
+    font-family: Plus Jakarta Sans;
+    transition: transform,display ease-in 0.3s;
+    margin-bottom: 20px;
+}
+
+#menu-phone>a {
+    color: #fff;
+    width:100%;
+    /* align-self:center; */
+    text-align:center;
+    box-sizing: border-box;
+    padding: 4px;
+    font-size:1.1rem;
+    
+    text-decoration: none;
+    /* border-bottom:2px solid #000; */
+}
+
+#menu-phone > a:hover{
+    font-size:1.18rem;
+    color:#fff;
+
+}
+
+
+
+.menu-item-bottom {
+    border-bottom:2px solid #000;
+}
+
+.menu-item-bottom:hover{
+    background: #696969;
+    color:#fff
+}
+
+#contact-menu{
+    width: 170px;
+    /* border-radius: 9999px; */
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* border: 2px solid #000; */
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    color:#fff;
+}
+
+#contact-menu:hover,
+#contact-menu:focus {
+    /* border: 2px solid #fff; */
+    background: #000;
+    color: #fff;
+}
+
+.display-toggle-on{
+    display:flex;
+}
+.display-toggle-off{
+    display:none;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="public/logo1@2x.png" alt="">
+        <div id="navbar">
+            <a href="" class="nav-item" tabindex="2">
+                <li>Service</li>
+            </a><a href="" class="nav-item" tabindex="3">
+                <li>Our team</li>
+            </a><a href="" class="nav-item" tabindex="4">
+                <li>About Us</li>
+            </a><a href="" id="contact-us-nav" tabindex="1">
+                <li>Contact Us</li>
+            </a>
+        </div>
+
+        <div class="menu">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <path class="line top" d="M 20,30 H 80" />
+                <path class="line middle" d="M 20,50 H 80" />
+                <path class="line bottom" d="M 20,70 H 80" />
+            </svg>
+        </div>
+    </nav>
+    <!-- for the menu in mobile -->
+    <div id="menu-phone" class="display-toggle-off">
+        <a href="" class="menu-item-bottom" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+            Service
+        </a><a href="" class="menu-item-bottom">
+            About us
+        </a><a href="" class="menu-item-bottom">
+            Our Team
+        </a><a href="" id="contact-menu">
+            Contact us
+        </a>
+    </div>
+    <script src="./js/nav.js"></script>
+    <div class="main">
+        <div class="text-content">
+            <p class="heading">
+                Meet Our Team
+            </p>
+            <p class="para-content"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto natus eaque animi impedit totam reiciendis dolorem blanditiis, nobis vel! Velit, iusto. Voluptates ipsa tempora, perferendis sunt fugiat inventore ea. Quos.</p>
+        </div>
+
+        <div class="image-container">
+            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="Image 1" class="image">
+            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="Image 2" class="image">
+            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="Image 3" class="image">
+            <img src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w1200/2023/10/free-images.jpg" alt="Image 4" class="image">
+        </div>
+    </div>
+    <script>
+        const menu = document.getElementsByClassName("menu")[0];
+
+const menuPhone = document.getElementById("menu-phone");
+
+menu.addEventListener("click", function () {
+    let a = menu.getElementsByTagName("path")[0]
+    let b = menu.getElementsByTagName("path")[1]
+    let c = menu.getElementsByTagName("path")[2]
+
+    a.classList.toggle("top1")
+    b.classList.toggle("middle1")
+    c.classList.toggle("bottom1")
+
+    menuPhone.classList.toggle("display-toggle-off")
+    menuPhone.classList.toggle("display-toggle-on")
+    // a.classList.toggle("line")
+    // b.classList.toggle("middle")
+    // c.classList.toggle("bottom")
+})
+    </script>
+</body>
+</html>
