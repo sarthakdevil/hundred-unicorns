@@ -11,7 +11,7 @@
     /* background-blend-mode: difference; */
     /* height:600px; */
     margin-left:15%;
-    z-index: -1;
+    margin-top:2vh;
 }
 
 #unicorn > div{
@@ -32,15 +32,31 @@
     font-family: Plus Jakarta Sans;
 }
 
-#unicorn-1-1  h1{
-    margin:-15px 0px;
-    /* color:red; */
+#unicorn-1-1{
+    padding-top:14px;
+}
+
+#unicorn-1-1  span{
+    line-height: 100%;
+    background: transparent;
     font-size:4rem;
+
+    background: linear-gradient( 118.23deg, rgba(130, 238, 253, 0.65) 29.69%, rgba(11, 120, 183, 0.23) );
+    
+    
+    /* background: linear-gradient(to right, #0096c7, #623CEA); */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    backdrop-filter: blur(75px);
+    -webkit-text-stroke: 0.8px #fffefe;
     
 }
 
 #unicorn-1-2{
     font-size:1.6rem;
+    color:rgba(255, 255, 255, 0.71);
+    font-weight:bolder
     
 }
 
@@ -58,7 +74,7 @@
         font-size:1.1rem;
     }
 
-    #unicorn-1-1  h1{
+    #unicorn-1-1  span{
         /* color:red; */
         font-size:2.5rem;
         
