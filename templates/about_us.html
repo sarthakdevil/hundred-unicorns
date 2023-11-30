@@ -301,7 +301,7 @@ nav>img {
 </head>
 <body>
     <nav>
-        <img src="public/logo1@2x.png" alt="">
+		<img src="{{ url_for("static", filename="public/logo1@2x.png") }}" alt="">
         <div id="navbar">
             <a href="" class="nav-item" tabindex="2">
                 <li>Service</li>
@@ -334,7 +334,7 @@ nav>img {
             Contact us
         </a>
     </div>
-    <script src="./js/nav.js"></script>
+	<script src="{{ url_for("static", filename="js/nav.js") }}"></script>
     <div class="main">
         <div class="text-content">
             <p class="heading">

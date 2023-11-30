@@ -423,7 +423,7 @@ input.button-style {
 </head>
 <body>
     <nav>
-        <img src="public/logo1@2x.png" alt="">
+		<img src="{{ url_for("static", filename="public/logo1@2x.png") }}" alt="">
         <div id="navbar">
             <a href="" class="nav-item" tabindex="2">
                 <li>Service</li>
@@ -445,7 +445,7 @@ input.button-style {
         </div>
     </nav>
     <div id="main">
-    <div class="pic"><img class="untitled-1-1-icon" alt="" src="./public/untitled1-1@2x.png"/></div>
+		<div class="pic"><img class="untitled-1-1-icon" alt="" src="{{ url_for("static", filename="public/untitled1-1@2x.png") }}"/></div>
 
     <div class="form-contact">
         <form method="POST" action="">
