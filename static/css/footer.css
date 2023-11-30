@@ -5,18 +5,28 @@ footer {
     align-items: center;
     /* padding-top: 400px; */
 
+    /* background:red; */
+    border-radius:12px;
+
+    /* background-color: rgba(138, 213, 218, 0.45);
+    backdrop-filter: blur(100%); */
+    background: radial-gradient(at center, rgba(1, 60, 65, 0.553), #000);
+    /* background-image:radial-gradient(at center, rgba(138, 213, 218, 0.45) 1%, #000 99%); */
     font-family: Plus Jakarta Sans;
+    color:#fff;
+
 }
 
 #foot-center>h1 {
     font-size: 3.2rem;
-    color: #000;
+    color: #fff;
     text-transform: uppercase;
     text-align: center;
     font-weight: lighter;
 }
 
 #foot-center {
+    background: transparent;
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -24,6 +34,10 @@ footer {
     align-items: center;
 
     /* padding-bottom: 200px; */
+}
+
+#foot-center{
+    padding:17vh 0vh;
 }
 
 #footer-bottom {
@@ -37,7 +51,7 @@ footer {
     flex-direction: row;
     justify-content: end;
 
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #fff;
 }
 
 #footer-menu {
@@ -58,8 +72,31 @@ footer {
 #footer-menu>a {
     padding: 18px 8px;
     margin-right: 40px;
+    font-weight:bold;
     /* border:1px solid #000; */
-    color: #000;
+    color: #fff;
     font-size: 1.4rem;
     text-decoration: none;
+}
+
+footer > h3{
+    text-align:center;
+}
+
+@media screen and (max-width:1023px){
+    #foot-center{
+        padding:10vh 0vh;
+    }
+
+    #footer-menu>a{
+        font-size:1rem;
+    } 
+
+    #foot-center>h1{
+        font-size:1.8rem;
+    }
+
+    #foot-center > img{
+        width:30vw;
+    }
 }

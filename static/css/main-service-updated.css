@@ -1,0 +1,62 @@
+#service {
+    /* height: 400px; 
+    /* margin-left:15%; */
+
+    font-family: Plus Jakarta Sans;
+}
+
+#service>h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 3.8rem;
+
+
+}
+
+#service>h1>a {
+    color: #fff;
+    background-color:rgba(1, 60, 65, 0.553);
+    text-decoration: none;
+    padding: 0px 8px;
+    border-radius: 9999px;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+    animation: blink 700ms infinite linear 0ms alternate;
+}
+
+@keyframes blink {
+    from {
+        background-coloR: rgba(1, 60, 65, 0.553);
+        color: #fff;
+    }
+    to {
+        background-coloR: rgba(11, 94, 102, 0.553);
+        color: #fff;
+    }
+}
+
+#service a:hover {
+    background: #fff;
+    color: #000;
+    animation: none;
+
+}
+
+
+@media screen and (max-width:1024px) {
+
+    #service {
+        background-size: 100%;
+        /* height: 400px; */
+        height: fit-content;
+        margin-left: 5%;
+        /* padding-top:40vh; */
+
+    }
+
+    #service>h1 {
+        font-size: 2.5rem;
+    }
+}
