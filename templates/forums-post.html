@@ -51,15 +51,23 @@
 	<script src="{{ url_for("static", filename="js/nav.js") }}"></script>
     <!-- the above code is only for navabr -->
 
-	<ul>
-        {% for post in posts %}
-		<div style="width: 60%; margin: 0px auto;">
-            <h6 style="color:white">Name <STRONG style="color:white">{{post.user.name}}</STRONG></h6>
-            <h6 style="color:white">Date <STRONG>{{post.date}}</STRONG></h6>
-			<p style="color:white">{{post.post_data}}</p>
-		</div>
-		<br>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <form class="forum mt-2 flex align-center justify-center ml-44 lg:w-auto lg:flex lg:items-start lg:justify-evenly" action="#" method="POST">
+            <div class="name_div mt-1">
+			<!-- <label>Name:- </label> -->
+            <!-- <input type="text" class="w-64  lg:w-96" required="required" ></div> -->
+
+            <div class="comment ">
+                <label>Comment:- </label>
+            <label>
+                <textarea class="w-96 lg:w-max" wrap="soft" rows="6" cols="70" maxlength="500" name="comment"></textarea>
+            </label>
+            </div>
+
+
+            <button class="styled ml-52" type="submit">Submit</button>
+        </form>
+    </div>
+
 </body>
 </html>
