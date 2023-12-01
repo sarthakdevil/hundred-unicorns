@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@500;700&display=swap"
+    />
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: "Plus Jakarta Sans";
+
+        }
+        #main{
+            position: relative;
+        }
+        nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 6px 10vw;
+    justify-content: space-between;
+    gap: 80px;
+    z-index: 99;
+}
+
+nav>img {
+    width: 200px;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+
+}
+
+@media screen and (min-width:1024px) {
+    #navbar {
+        display: flex;
+    }
+
+    #menu-phone{
+        display:none
+    }
+
+
+
+
+}
+
+#navbar li {
+    list-style: none;
+}
+
+#navbar a {
+    width: 140px;
+    height: 60px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: Plus Jakarta Sans;
+
+    border-bottom: 3px solid #000;
+
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.nav-item {
+    border: 2px dashed #000;
+    
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    border: 2px dashed #fff;
+    border-bottom: 3px solid #fff;
+}
+
+#contact-us-nav {
+    width: 170px;
+    border-radius: 9999px;
+    border: 2px solid #fff;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    border-bottom: #fff !important;
+}
+
+#contact-us-nav:hover,
+#contact-us-nav:focus {
+    border: 2px solid #fff;
+    border-bottom:3px solid #fff;
+    background: #000;
+    color: #fff;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.line {
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke: #fff;
+    transition: all 500ms;
+}
+
+.top {
+    transform-origin: 26px 40px;
+}
+
+.middle {
+    stroke-dasharray: 60 60;
+}
+
+.bottom {
+    transform-origin: 26px 60px;
+}
+
+.menu .line {
+    stroke: #fff;
+}
+
+.menu .top1 {
+    transform: rotate(45deg);
+}
+
+.menu .middle1 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+}
+
+.menu .bottom1 {
+    transform: rotate(-45deg);
+}
+
+.menu {
+    display: none
+}
+
+
+@media screen and (max-width:1023px) {
+    .menu {
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: fit-content;
+        border: 2px solid #fff;
+        width: 50px;
+        border-radius: 9999px;
+    }
+
+    .menu>svg {
+        height: 40px
+    }
+
+    nav > img{
+        width:10em;
+    }
+
+    nav {
+        justify-content: space-between;
+        gap: 20%;
+    }
+
+
+}
+
+#menu-phone {
+    /* width:100%; */
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    text-align: left;
+    /* padding: 0px 8px; */
+    border-radius: 20px;
+    /* display: flex; */
+    color: #fff;
+    flex-direction: column;
+    font-family: Plus Jakarta Sans;
+    transition: transform,display ease-in 0.3s;
+    margin-bottom: 20px;
+}
+
+#menu-phone>a {
+    color: #fff;
+    width:100%;
+    /* align-self:center; */
+    text-align:center;
+    box-sizing: border-box;
+    padding: 4px;
+    font-size:1.1rem;
+    
+    text-decoration: none;
+    /* border-bottom:2px solid #000; */
+}
+
+#menu-phone > a:hover{
+    font-size:1.18rem;
+    color:#fff;
+
+}
+
+
+
+.menu-item-bottom {
+    border-bottom:2px solid #000;
+}
+
+.menu-item-bottom:hover{
+    background: #696969;
+    color:#fff
+}
+
+#contact-menu{
+    width: 170px;
+    /* border-radius: 9999px; */
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* border: 2px solid #000; */
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    color:#fff;
+}
+
+#contact-menu:hover,
+#contact-menu:focus {
+    /* border: 2px solid #fff; */
+    background: #000;
+    color: #fff;
+}
+
+.display-toggle-on{
+    display:flex;
+}
+.display-toggle-off{
+    display:none;
+}
+
+        .pic{
+            position: absolute;
+
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0), #000);
+            height: 100vh;
+            width: 100%;
+            z-index: -100;
+            overflow: hidden; 
+
+        }
+        .untitled-1-1-icon{
+            height: 100%;
+            width: 100%;
+        }
+        .form-contact{
+            position: fixed;
+            top: 55%;
+            right: 10%;
+            transform: translate(0, -50%);
+            width: 30%;
+            height: 65%;
+
+            color: white;
+            background-color:#5e5e5e; 
+            z-index: 1;
+            box-shadow: -13px 13px 4px 12px rgba(94, 94, 94, 0.25);
+
+        }
+
+        .heading_talk{
+            margin: 10px 0px;
+            margin-bottom: 5px;
+        }
+
+        .form-contact-inside{
+            margin: 2% 5%;
+            overflow: hidden;
+
+        }
+
+        .chunks{
+            display: flex;
+            width: 100%;
+        }
+        .chunks div {
+            width: 50%;
+
+        }
+
+        .chunks p{
+            margin-bottom: 5px;
+
+        }
+
+        input.input-fields-main {
+            width: 80%;
+            height: 1.88em;
+  background: transparent; 
+  border: 1px solid #fff;
+  padding: 8px;  
+  outline: none;  
+  appearance: textarea;
+
+}
+
+input.input-fields-main:hover,
+input.input-fields-main:focus {
+  border-color: #000; 
+}
+
+
+
+textarea.textarea-fields-main {
+  width: 80%;
+  height: 1.88em;
+  background: transparent; 
+  border: 1px solid #fff; 
+  padding: 8px; 
+  outline: none; 
+  resize: none; 
+}
+
+
+textarea.textarea-fields-main:hover,
+textarea.textarea-fields-main:focus {
+  border-color: #000; 
+}
+
+.chunks2 p {
+  margin-bottom: 5px;
+}
+
+.chunks3 {
+  display: flex;
+  align-items: center;
+}
+
+.chunks3 div {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.chunks3 p {
+  margin: 0; 
+}
+
+.chunks3 input {
+    margin: 0;
+    margin-right: 3px;
+  margin-top: 5px; 
+}
+
+
+input.button-style {
+    margin-top: 5%;
+      border: 2px solid #000; 
+      padding: 10px 15px; 
+      cursor: pointer; 
+      background-color: #464d59; 
+      color:#fff;
+      font-size: 1.7em;
+      transition: border-color 0.3s ease; 
+    }
+
+    
+    input.button-style:hover {
+      border-color: #555; 
+    }
+
+
+    </style>
+
+    <!-- responsive -->
+
+    <style>
+            @media (max-width: 765px) {
+                body{
+                    background-color: #000;
+                    
+                }
+      .pic {
+        display: none;
+      }
+
+      .form-contact{
+            position: fixed;
+            top: 55%;
+            right: 7.5%;
+            transform: translate(0, -50%);
+            width: 85%;
+            height: 60%;
+            color: white;
+            background-color:#5e5e5e; 
+            z-index: 1; 
+            box-shadow: -13px 13px 4px 12px rgba(94, 94, 94, 0.25);
+            font-size: 0.75em;
+
+        }
+
+
+
+    }
+    </style>
+
+</head>
+<body>
+    <nav>
+		<img src="{{ url_for("static", filename="public/logo1@2x.png") }}" alt="">
+        <div id="navbar">
+            <a href="" class="nav-item" tabindex="2">
+                <li>Service</li>
+            </a><a href="" class="nav-item" tabindex="3">
+                <li>Our team</li>
+            </a><a href="" class="nav-item" tabindex="4">
+                <li>About Us</li>
+            </a><a href="" id="contact-us-nav" tabindex="1">
+                <li>Contact Us</li>
+            </a>
+        </div>
+
+        <div class="menu">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <path class="line top" d="M 20,30 H 80" />
+                <path class="line middle" d="M 20,50 H 80" />
+                <path class="line bottom" d="M 20,70 H 80" />
+            </svg>
+        </div>
+    </nav>
+    <div id="main">
+		<div class="pic"><img class="untitled-1-1-icon" alt="" src="{{ url_for("static", filename="public/untitled1-1@2x.png") }}"/></div>
+
+    <div class="form-contact">
+        <form method="POST" action="">
+
+            <div class="form-contact-inside">
+                <h2 class="heading_talk">Talk with our team</h2>
+                <div class="chunks">
+                    <div>
+                        <p>First Name</p>
+                        <input class="input-fields-main" type="text">
+                    </div>
+                    <div>
+                        <p>Last Name</p>
+                        <input class="input-fields-main" type="text">
+                    </div>
+                </div>
+                <div class="chunks">
+                    <div>
+                        <p>Email</p>
+                        <input class="input-fields-main" type="text">
+                    </div>
+                    <div>
+                        <p>Phone Number</p>
+                        <input class="input-fields-main" type="text">
+                    </div>
+                </div>
+                <div class="chunks2">
+                    <div>
+                        <p>What would you like to discuss?</p>
+                        <textarea class="textarea-fields-main" style="width: 90%; height: 5em;" type="text"></textarea>
+                    </div>
+                </div>
+                <div class="chunks3">
+                    <div>
+                        <input type="checkbox" name="" id="">
+                        <p>By checking the box and clicking "Submit", you are agreeing to Hundred Unicorn's Privacy Statement.</p>
+                        
+                    </div>
+                </div>
+                <div class="chunks4">
+                    <div>
+                        <input class="button-style" type="button" value="Submit" name="submit" id="">
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+                
+
+        </form>
+
+    </div>
+</div>
+<script>
+    const menu = document.getElementsByClassName("menu")[0];
+
+const menuPhone = document.getElementById("menu-phone");
+
+menu.addEventListener("click", function () {
+let a = menu.getElementsByTagName("path")[0]
+let b = menu.getElementsByTagName("path")[1]
+let c = menu.getElementsByTagName("path")[2]
+
+a.classList.toggle("top1")
+b.classList.toggle("middle1")
+c.classList.toggle("bottom1")
+
+menuPhone.classList.toggle("display-toggle-off")
+menuPhone.classList.toggle("display-toggle-on")
+// a.classList.toggle("line")
+// b.classList.toggle("middle")
+// c.classList.toggle("bottom")
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 6px 10vw;
+    justify-content: space-between;
+    gap: 80px
+}
+
+nav>img {
+    width: 200px;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+
+}
+
+@media screen and (min-width:1024px) {
+    #navbar {
+        display: flex;
+    }
+
+    #menu-phone{
+        display:none
+    }
+
+
+
+
+}
+
+#navbar li {
+    list-style: none;
+}
+
+#navbar a {
+    width: 140px;
+    height: 60px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: Plus Jakarta Sans;
+
+    border-bottom: 3px solid #fff;
+
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.nav-item {
+    border: 2px dashed #000;
+    border-bottom: 3px solid #fff;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+    border: 2px dashed #fff;
+    border-bottom: 3px solid #fff;
+}
+
+#contact-us-nav {
+    width: 170px;
+    border-radius: 9999px;
+    border: 2px solid #fff;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+#contact-us-nav:hover,
+#contact-us-nav:focus {
+    border: 2px solid #000;
+    border-bottom:3px solid #000;
+    background: #fff;
+    color: #000;
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.line {
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke: #fff;
+    transition: all 500ms;
+}
+
+.top {
+    transform-origin: 26px 40px;
+}
+
+.middle {
+    stroke-dasharray: 60 60;
+}
+
+.bottom {
+    transform-origin: 26px 60px;
+}
+
+.menu .line {
+    stroke: #fff;
+}
+
+.menu .top1 {
+    transform: rotate(45deg);
+}
+
+.menu .middle1 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+}
+
+.menu .bottom1 {
+    transform: rotate(-45deg);
+}
+
+.menu {
+    display: none
+}
+
+
+@media screen and (max-width:1023px) {
+    .menu {
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: fit-content;
+        border: 2px solid #fff;
+        width: 50px;
+        border-radius: 9999px;
+    }
+
+    .menu>svg {
+        height: 40px
+    }
+
+    nav > img{
+        width:10em;
+    }
+
+    nav {
+        justify-content: space-between;
+        gap: 20%;
+    }
+
+
+}
+
+#menu-phone {
+    /* width:100%; */
+    box-sizing: border-box;
+    border: 2px solid #ffff;
+    text-align: left;
+    /* padding: 0px 8px; */
+    border-radius: 20px;
+    /* display: flex; */
+    color: #ffff;
+    flex-direction: column;
+    font-family: Plus Jakarta Sans;
+    transition: transform,display ease-in 0.3s;
+    margin-bottom: 20px;
+}
+
+#menu-phone>a {
+    color: #ffff;
+    width:100%;
+    /* align-self:center; */
+    text-align:center;
+    box-sizing: border-box;
+    padding: 4px;
+    font-size:1.1rem;
+    
+    text-decoration: none;
+    /* border-bottom:2px solid #000; */
+}
+
+#menu-phone > a:hover{
+    font-size:1.18rem;
+    color:#000;
+
+}
+
+
+
+.menu-item-bottom {
+    border-bottom:2px solid #fff;
+}
+
+.menu-item-bottom:hover{
+    background: #beacac;
+    color:#000
+}
+
+#contact-menu{
+    width: 170px;
+    /* border-radius: 9999px; */
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* border: 2px solid #000; */
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    color:#000;
+}
+
+#contact-menu:hover,
+#contact-menu:focus {
+    /* border: 2px solid #fff; */
+    background: #fff;
+    color: #000;
+}
+
+.display-toggle-on{
+    display:flex;
+}
+.display-toggle-off{
+    display:none;
+}

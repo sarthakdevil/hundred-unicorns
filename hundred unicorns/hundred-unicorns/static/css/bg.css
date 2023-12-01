@@ -1,0 +1,20 @@
+body{
+    /* background:#696969; */
+    background:#000;
+
+    /* please do not remove this margin */
+    /* margin:0px; */
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+    gap:20vh;
+    /* gap:20px; */
+}
+
+@media screen and (max-width:1023px){
+    main{
+        gap:12vh;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="icon" href="{{ url_for("static", filename="favicon.png") }}">
+</head>
+<body>
+  <form action="" method="post">
+    
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input
+        type="name"
+        class="form-control"
+        id="name"
+        placeholder="Enter your Name"
+        name="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="cemail"
+        placeholder="Enter your Email"
+        name="email"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="passwd1">Your Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="pass"
+        placeholder="Enter your Password"
+        name="passwd1"
+        required
+      />
+	  <lebal for="passwd2">Re-enter Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="pass"
+        placeholder="Re-Enter your Password"
+        name="passwd2"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  </form>
+</body>
+</html>
