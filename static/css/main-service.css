@@ -1,11 +1,12 @@
 #service {
-    /* height: 400px; */
+    /* height: 400px; 
     /* margin-left:15%; */
 
     font-family: Plus Jakarta Sans;
 }
 
 #service>h1 {
+    color:#fff;
     text-align: center;
     font-size: 3.8rem;
 
@@ -33,15 +34,13 @@
     box-sizing: border-box;
     font-size: 1.6rem;
 
+    color:#fff;
     font-family: Plus Jakarta Sans;
 }
 
-#service>div>img {
-    height: 80vh;
-}
 
 #service>div>img {
-    height: 500px;
+    width:30vw;
 }
 
 .what-we-do{
@@ -76,6 +75,7 @@
     }
 
     #service>div>img {
-        height: 380px;
+        width:60vw;
+        max-width:300px;
     }
 }

@@ -1,41 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@400;500;600;700&display=swap">
 
-    <link rel="stylesheet" href="../static/css/bg.css">
-    <link rel="stylesheet" href="../static/css/nav.css">
-
-    <style>
-
-  </style>
-
-
-    </style>
-
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/nav.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/bg.css") }}">
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/forum.css") }}">
+    <title>Title</title>
 </head>
-
 <body>
 
     <nav>
-        <img src="../static/public/logo1@2x.png" alt="">
+		<img src="{{ url_for("static", filename="public/logo1@2x.png") }}" alt="">
         <div id="navbar">
-                <div class="dropdown">
-                    <a href="" class="nav-item" tabindex="2">
-                    </a>
-                    <div class="dropdown-content">
-                      <a href="#">Item 1</a>
-                      <a href="#">Item 2</a>
-                      <a href="#">Item 3</a>
-                    </div>
-                  </div>
-                  
+
+
 
           <a href="" class="nav-item" tabindex="3">
                 <li>Our team</li>
@@ -66,9 +48,18 @@
             Contact us
         </a>
     </div>
-    <script src="../static/js/nav.js"></script>
+	<script src="{{ url_for("static", filename="js/nav.js") }}"></script>
     <!-- the above code is only for navabr -->
 
+	<ul>
+        {% for post in posts %}
+		<div style="width: 60%; margin: 0px auto;">
+            <h6 style="color:white">Name <STRONG style="color:white">{{post.user.name}}</STRONG></h6>
+            <h6 style="color:white">Date <STRONG>{{post.date}}</STRONG></h6>
+			<p style="color:white">{{post.post_data}}</p>
+		</div>
+		<br>
+        {% endfor %}
+    </ul>
 </body>
-
 </html>

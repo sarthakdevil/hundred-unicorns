@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import UserMixin, LoginManager, login_user, logout_user, current_user, login_required
+from sqlalchemy.orm import backref
 from sqlalchemy.sql import func
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -24,14 +25,14 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     post_data = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(300), unique=True)
     name = db.Column(db.String(300))
     password = db.Column(db.String(150))
-    posts = db.relationship("Post")
+    posts = db.relationship("Post", backref='user')
 
 with app.app_context():
     if not path.exists(DB_NAME):
@@ -44,13 +45,21 @@ with app.app_context():
 def home():
         return render_template("index.html")
 
-@app.route("/logout")
+@app.route("/about/")
+def about():
+    return render_template("about_us.html")
+
+@app.route("/contact-us/")
+def contact():
+    return render_template("contact_us2.html")
+
+@app.route("/logout/")
 @login_required
 def logout():
     logout_user()
     return redirect(url_for("login"))
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/login/", methods=['GET', 'POST'])
 def login():
     if request.method == "POST":
         email = request.form.get("email")
@@ -73,7 +82,7 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/signup", methods=["GET", "POST"])
+@app.route("/signup/", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
         name = request.form.get("name")
@@ -100,16 +109,31 @@ def signup():
 
     return render_template("signup.html")
 
-@app.route("/dump-users")
-def dump():
-    users = User.query.order_by(User.id)
-    return " ".join(user.name for user in users)
+# @app.route("/dump-users")
+# def dump():
+#     users = User.query.order_by(User.id)
+#     return " ".join(user.name for user in users)
 
-@app.route("/forums", methods=['GET', 'POST'])
+@app.route("/forums/")
 def forum():
+    posts = Post.query.all()
+    return render_template("forums.html", user=current_user, posts=posts)
+
+@app.route("/forums/post/", methods=["GET", "POST"])
+@login_required
+def post_forums():
     if request.method == "POST":
-        return "Huge L on you, haven't implimented it yet LOL"
-    return render_template("forum.html")
+        comment = request.form.get("comment")
+        if not comment:
+            flash("Comment too short")
+
+        else:
+            post = Post(post_data=comment, user_id=current_user.id)
+            db.session.add(post)
+            db.session.commit()
+            return redirect(url_for("forum"))
+    
+    return render_template("forums-post.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
